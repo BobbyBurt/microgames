@@ -36,5 +36,6 @@ sadfasdfasdfasd
     resizeField(w, h)
     {
         this.instructionText.setPosition(w / 2, h / 2);
+        console.log('hello from mobile! this stinks');
     }
 }
