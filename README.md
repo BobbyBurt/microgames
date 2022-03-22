@@ -20,14 +20,20 @@ Could I imitate WW Smooth Moves’ forms by requiring the user to change the pho
 ## Dev Plan
 For now I’m not too worried about the framework and technicality of microgames, like varying speed / time. Just taking the opportunity to experiment and make a bunch of microgames. I’m working on a basic debug microgame launcher for now, which will be enough to test / show off the microgames as I make them
 
+<br /> 
+
 ## To-do
 - [ ] get framework in place and working
+
+<br /> 
 
 ## Left-off
 - I was setting up the timer to be launched on top of whatever microgame is playing
 - Next I gotta used the scenes communicating with each other through events. 
 - The menu scene should only sleep and resume when microgame is done. Can it recieve events in this state?
 - Need to set up events that will emmit from microgames to signal success or failure.
+
+- - - -
 
 ## Microgame ideas
 #### Clear!
