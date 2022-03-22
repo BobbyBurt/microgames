@@ -1,8 +1,12 @@
 # Phaser Microgames
 I’m making my own little warioware game as an exercise in learning Phaser. Smaller experiments that I can later make into a full experience seems like the best way to learn this framework, giving me the chance to try out all this exciting stuff in small bursts.
 
+<br /> 
+
 ## Goals
 Seems like the perfect way to experiment with mobile compatibility. As such, input is focused on touch and the screen needs to be adaptable.
+
+<br /> 
 
 ## Overall design doc
 ### Input
@@ -16,6 +20,8 @@ I love the idea of a hot potato multiplayer mode where players pass the phone in
 
 ### Brainstorming
 Could I imitate WW Smooth Moves’ forms by requiring the user to change the phone orientation fo
+
+<br /> 
 
 ## Dev Plan
 For now I’m not too worried about the framework and technicality of microgames, like varying speed / time. Just taking the opportunity to experiment and make a bunch of microgames. I’m working on a basic debug microgame launcher for now, which will be enough to test / show off the microgames as I make them
@@ -34,6 +40,8 @@ For now I’m not too worried about the framework and technicality of microgames
 - Need to set up events that will emmit from microgames to signal success or failure.
 
 - - - -
+
+<br /> 
 
 ## Microgame ideas
 #### Clear!
