@@ -44,23 +44,23 @@ For now I’m not too worried about the framework and technicality of microgames
 <br /> 
 
 ## Microgame ideas
-#### Clear!
+### Clear!
 Tetris, with an obvious spot to place the current tetrimino to clear the line. Harder variations might require you to fit into a tricky spot or use the next tetrimino
 
-#### Sort!
+### Sort!
 Similar to that bomb-omb sorting minigame on the DS and using Phaser’s drag zones, drag objects into two categories to sort them
 
-#### Uncover!
+### Uncover!
 Drag objects away to reveal something hiding under
 
-#### Feed!
+### Feed!
 Feed the Insaniquarium fish
 
-#### Hang up!
+### Hang up!
 Hang up bens phone
 
-#### Hide!
+### Hide!
 Drag pigeons into hiding spots as hunter loads his gun
 
-#### Gotta go!
+### Gotta go!
 Press the free stall. Others have feet visible under the *doors*
