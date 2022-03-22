@@ -20,6 +20,15 @@ Could I imitate WW Smooth Moves’ forms by requiring the user to change the pho
 ## Dev Plan
 For now I’m not too worried about the framework and technicality of microgames, like varying speed / time. Just taking the opportunity to experiment and make a bunch of microgames. I’m working on a basic debug microgame launcher for now, which will be enough to test / show off the microgames as I make them
 
+## To-do
+- [ ] get framework in place and working
+
+## Left-off
+- I was setting up the timer to be launched on top of whatever microgame is playing
+- Next I gotta used the scenes communicating with each other through events. 
+- The menu scene should only sleep and resume when microgame is done. Can it recieve events in this state?
+- Need to set up events that will emmit from microgames to signal success or failure.
+
 ## Microgame ideas
 #### Clear!
 Tetris, with an obvious spot to place the current tetrimino to clear the line. Harder variations might require you to fit into a tricky spot or use the next tetrimino
@@ -30,11 +39,14 @@ Similar to that bomb-omb sorting minigame on the DS and using Phaser’s drag zo
 #### Uncover!
 Drag objects away to reveal something hiding under
 
-## To-do
-- [ ] get framework in place and working
+#### Feed!
+Feed the Insaniquarium fish
 
-## Left-off
-- I was setting up the timer to be launched on top of whatever microgame is playing
-- Next I gotta used the scenes communicating with each other through events. 
-- The menu scene should only sleep and resume when microgame is done. Can it recieve events in this state?
-- Need to set up events that will emmit from microgames to signal success or failure.
+#### Hang up!
+Hang up bens phone
+
+#### Hide!
+Drag pigeons into hiding spots as hunter loads his gun
+
+#### Gotta go!
+Press the free stall. Others have feet visible under the *doors*
