@@ -39,8 +39,6 @@ For now I’m not too worried about the framework and technicality of microgames
 - The menu scene should only sleep and resume when microgame is done. Can it recieve events in this state?
 - Need to set up events that will emmit from microgames to signal success or failure.
 
-- - - -
-
 <br /> 
 
 ## Microgame ideas
@@ -64,3 +62,5 @@ Drag pigeons into hiding spots as hunter loads his gun
 
 ### Gotta go!
 Press the free stall. Others have feet visible under the *doors*
+
+- - - -
