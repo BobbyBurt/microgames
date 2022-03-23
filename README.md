@@ -28,16 +28,18 @@ For now I’m not too worried about the framework and technicality of microgames
 
 <br /> 
 
-## To-do
-- [ ] get framework in place and working
+## To-do / Left-off
+- [ ] menu scene should be woken up, not started. Same instance will persist
+- [ ] simple timer display. it can just be a bar at the bottom. it should change colour
+- [ ] indicate success or failure in menu scene
+- [ ] make a microgame using the most basic baby programming. Give it the fully audio & adaptive visual treatment
+- [ ] ability to select microgame in menu scene
 
 <br /> 
 
-## Left-off
-- I was setting up the timer to be launched on top of whatever microgame is playing
-- Next I gotta used the scenes communicating with each other through events. 
-- The menu scene should only sleep and resume when microgame is done. Can it recieve events in this state?
-- Need to set up events that will emmit from microgames to signal success or failure.
+## Warioware notes
+#### Timer
+In the original it's 3.7 seconds, in Smooth Moves it's 4.5. This increase in time likely has to do with the indirectness of the wii remote, and that's something I think I should replicate.
 
 <br /> 
 

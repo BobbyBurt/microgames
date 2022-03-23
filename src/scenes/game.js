@@ -28,9 +28,16 @@ export default class game extends Phaser.Scene
         this.logo.on('pointerdown', () => {
 
             this.logo.setTint(Math.random() * 16000000);
+            
+            eventsCenter.emit('win');
         });
 
         this.resizeField(this.scale.width, this.scale.height);
+
+        eventsCenter.on('timer-end', () =>
+        {
+            this.scene.stop(this.scene.key);
+        });
     }
 
     update()

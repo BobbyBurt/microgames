@@ -27,10 +27,16 @@ sadfasdfasdfasd
         this.input.on('pointerdown', () => {
 
             this.scene.launch('game');
-            this.scene.stop(this.scene.key);
+            this.scene.launch('timer');
+            this.scene.sleep(this.scene.key);
         });
 
         this.resizeField(this.scale.width, this.scale.height);
+
+        eventsCenter.on('win', () =>
+        {
+            console.log('win!');
+        });
     }
 
     resizeField(w, h)
