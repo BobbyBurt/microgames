@@ -14,8 +14,8 @@ export default class timer extends Phaser.Scene
         this.timer = this.time.delayedCall(4500, () => {
 
             eventsCenter.emit('timer-end');
-            this.scene.start('menu');
-            // this.scene.stop(this.scene.key);
+            this.scene.wake('menu');
+            this.scene.stop(this.scene.key);
         });
     }
 

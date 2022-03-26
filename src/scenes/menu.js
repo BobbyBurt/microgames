@@ -29,13 +29,15 @@ sadfasdfasdfasd
             this.scene.launch('game');
             this.scene.launch('timer');
             this.scene.sleep(this.scene.key);
+            
+            this.instructionText.setColor('#ff0000');
         });
 
         this.resizeField(this.scale.width, this.scale.height);
 
         eventsCenter.on('win', () =>
         {
-            console.log('win!');
+            this.instructionText.setColor('#00ff00');
         });
     }
 
