@@ -13,7 +13,7 @@ export default class timer extends Phaser.Scene
         
         this.graphics = this.add.graphics({ x: 100, y: this.scale.height - 50});
 
-        this.timer = this.time.delayedCall(4500, () => {
+        this.timer = this.time.delayedCall(4000, () => {
 
             eventsCenter.emit('timer-end');
             this.scene.wake('menu');
@@ -37,7 +37,7 @@ export default class timer extends Phaser.Scene
         this.stringColor = Phaser.Display.Color.RGBToString(this.interpolateColor.r, this.interpolateColor.g, this.interpolateColor.b);
         this.stringColor = '0x' + this.stringColor.substring(1);
 
-        if (this.timer.getProgress() > .4)
+        if (this.timer.getProgress() > .2)
         {
             this.graphics.clear();
             this.graphics.fillStyle(this.stringColor);

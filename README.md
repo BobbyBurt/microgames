@@ -15,6 +15,9 @@ Microgame input is limited to mouse / touch. Some games will be exclusive to des
 ### Difficulty
 Each microgame dan be initialized with a 1-3 integer as a difficulty setting, which determines the variation of the game.
 
+### Time
+Timer time varies depending on the stage and how many microgames in the player is. I'll have to make microgames with variable time in mind. On top of screen scaling...
+
 ### Gamemodes
 I love the idea of a hot potato multiplayer mode where players pass the phone in a circle taking turns. It could be similar to multiplayer modes in WW Smooth Moves
 
@@ -44,6 +47,7 @@ v2
 ## Warioware notes
 #### Timer
 In the original it's 3.7 seconds, in Smooth Moves it's 4.5. This increase in time likely has to do with the indirectness of the wii remote, and that's something I think I should replicate.
+Some microgames will bring you back to the main scene before the timer ends, if you beat it especially early
 
 <br /> 
 
@@ -68,5 +72,8 @@ Drag pigeons into hiding spots as hunter loads his gun
 
 ### Gotta go!
 Press the free stall. Others have feet visible under the *doors*
+
+### Censor!
+Drag a marker to censor an image. Maybe the eyes of someone
 
 - - - -
