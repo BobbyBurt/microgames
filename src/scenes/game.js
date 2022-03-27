@@ -21,9 +21,14 @@ export default class game extends Phaser.Scene
 
     create()
     {    
-    //  CREATE IMAGE
+        // BG
+
+        this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#333333");
+
+        //  CREATE IMAGE
         
         this.logo = this.add.image(0, 0, 'logo').setInteractive();
+        this.logo.setOrigin(0.5, 0.5);
 
         this.logo.on('pointerdown', () => {
 
@@ -32,12 +37,24 @@ export default class game extends Phaser.Scene
             eventsCenter.emit('win');
         });
 
-        this.resizeField(this.scale.width, this.scale.height);
-
         eventsCenter.on('timer-end', () =>
         {
             this.scene.stop(this.scene.key);
         });
+
+        // HINT
+
+        this.hint = this.add.text(0, 0, 'Tap!', {fontSize: 48});
+        this.hint.setOrigin(0.5, 0.5);
+    
+        this.hintTimer = this.time.delayedCall(1000, () => {
+
+            this.hint.visible = false;
+        });
+
+        // RESIZE
+
+        this.resizeField(this.scale.width, this.scale.height);
     }
 
     update()
@@ -54,6 +71,7 @@ export default class game extends Phaser.Scene
 
     resizeField(w, h)
     {
-        this.logo.setPosition(w / 2, h / 2);
+        this.hint.setPosition(w / 2, h / 2);
+        this.logo.setPosition(w / 2, h / 3);
     }
 }
