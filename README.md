@@ -31,7 +31,8 @@ For now I’m not too worried about the framework and technicality of microgames
 ## To-do / Left-of
 v1
 - [x] menu scene should be woken up, not started. Same instance will persist
-- [ ] simple timer display. it can just be a bar at the bottom. it should change colour
+- [x] simple timer display. it can just be a bar at the bottom
+- [ ] timer interpolates color. Currently can't figure out how to convert color object to string that can be used for graphic fillstyle
 - [x] indicate success or failure in menu scene
 - [ ] make a microgame using the most basic baby programming. Give it the fully audio & adaptive visual treatment
 v2
