@@ -21,7 +21,9 @@ sadfasdfasdfasd
 
     create()
     {   
-        this.instructionText = this.add.text(0, 0, 'click / tap to start microgame');
+        this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#333333");
+        
+        this.instructionText = this.add.text(0, 0, 'click / tap to start microgame', {fontSize: 32});
         this.instructionText.setOrigin(0.5, 0.5);
 
         this.input.on('pointerdown', () => {

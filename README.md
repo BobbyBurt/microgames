@@ -28,7 +28,7 @@ For now I’m not too worried about the framework and technicality of microgames
 
 <br /> 
 
-## To-do / Left-off
+## To-do / Left-of
 v1
 - [x] menu scene should be woken up, not started. Same instance will persist
 - [ ] simple timer display. it can just be a bar at the bottom. it should change colour
