@@ -22,8 +22,7 @@ export default class game extends Phaser.Scene
     }
 
     create()
-    {    
-        
+    {
         // BG
 
         this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#cce5ff");
@@ -32,6 +31,11 @@ export default class game extends Phaser.Scene
         
         this.character = this.add.image(0, 0, 'character');
         this.character.setOrigin(0.5, 0.5);
+
+        this.ice = this.add.graphics();
+        this.ice.fillStyle(0x80bdff, .3);
+        this.ice.fillRect((this.scale.width / 2) - 100, (this.scale.height / 2) - 100, 200, 200);
+
 
         // this.logo.on('pointerdown', () => {
 
@@ -42,7 +46,8 @@ export default class game extends Phaser.Scene
 
         // HINT
 
-        this.hint = this.add.text(0, 0, hint, {fontSize: 48});
+        this.hint = this.add.text(0, 0, HINT, {fontSize: 48});
+        this.hint.setStroke('#262626', 20);
         this.hint.setOrigin(0.5, 0.5);
     
         this.hintTimer = this.time.delayedCall(1000, () => {
@@ -67,16 +72,9 @@ export default class game extends Phaser.Scene
 
     }
 
-    /** wraps character
-     *  @param {Phaser.GameObjects.Sprite} sprite */
-    startScene(sprite)
-    {
-        this.scene.start('game-over');
-    }
-
     resizeField(w, h)
     {
-        this.hint.setPosition(w / 2, h / 2);
-        this.logo.setPosition(w / 2, h / 3);
+        this.hint.setPosition(w / 2, h / 3);
+        this.character.setPosition(w / 2, h / 2);
     }
 }
