@@ -23,7 +23,7 @@ Timer time varies depending on the stage and how many microgames in the player i
 Timer visual can be a hand counting down in place of WW's bomb. Or is that lame
 
 ### Gamemodes
-I love the idea of a hot potato multiplayer mode where players pass the phone in a circle taking turns. It could be similar to multiplayer modes in WW Smooth Moves
+I love the idea of a hot potato multiplayer mode where players pass the phone in a circle taking turns, similar to multiplayer modes in WW Smooth Moves. To encourage players to pass the botone to the next player, a bomb could be shortening it's fuse after the microgame until the next player has the device. If the bomb explodes on you, (which will happen instantly if you lose a microgame,) then you're out.
 
 ### Brainstorming
 Could I imitate WW Smooth Moves’ forms by requiring the user to change the phone orientation fo
