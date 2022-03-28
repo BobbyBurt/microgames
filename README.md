@@ -76,4 +76,19 @@ Press the free stall. Others have feet visible under the *doors*
 ### Censor!
 Drag a marker to censor an image. Maybe the eyes of someone
 
+### Close!
+Hit the small X on the corner of the mobile ad, or else your ass is going to the App Store
+
+### Ignore!
+Don't touch the screen
+
+### Bath!
+kid's running around, catch him and drag to bath. Inspired by Calvin & Hobbes.
+
+### Shoot imposter!
+POV you're holding a gun and you're looking at a person and a robot clone of him fight. Tap on the the robot to shoot him, don't hit the real person.
+
+### Cut!
+Papa Louie style pizza cutting. Might ask for 4 slices, 6, or 8
+
 - - - -
