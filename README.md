@@ -12,6 +12,9 @@ Seems like the perfect way to experiment with mobile compatibility. As such, inp
 ### Input
 Microgame input is limited to mouse / touch. Some games will be exclusive to desktop or mobile if they rely on the differences of their input, such as cursor or multitouch.
 
+### Visuals
+I should take the most inspiration from the original WW, since it's pretty simple. Often it's just small simple sprites on a solid colour background. That'll really help reduce scaling complexity
+
 ### Difficulty
 Each microgame dan be initialized with a 1-3 integer as a difficulty setting, which determines the variation of the game.
 
@@ -85,10 +88,25 @@ Don't touch the screen
 ### Bath!
 kid's running around, catch him and drag to bath. Inspired by Calvin & Hobbes.
 
+### Remember!
+Instructions like "cut green wire, then red, then blue." Player can't do anything and automatically wins.
+
 ### Shoot imposter!
 POV you're holding a gun and you're looking at a person and a robot clone of him fight. Tap on the the robot to shoot him, don't hit the real person.
 
-### Cut!
+### Slice!
 Papa Louie style pizza cutting. Might ask for 4 slices, 6, or 8
+
+### Cut!
+Open panel of a bomb with red, green and blue wire. Cut in the order given in *Remember!*
+
+### Dial!
+Dial the number to a pizza place or police, depending on the situation
+
+### Steal!
+Based on that John Travolta game on NG, steal a guy's possessions by tapping on them when he isn't looking
+
+### Find!
+Pointer is a flashlight that helps you locate a little guy running around
 
 - - - -
