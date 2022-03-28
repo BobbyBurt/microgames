@@ -42,7 +42,7 @@ this version
 - [x] simple timer display. it can just be a bar at the bottom
 - [x] timer interpolates color. Currently can't figure out how to convert color object to string that can be used for graphic fillstyle
 - [x] indicate success or failure in menu scene
-- [ ] make a microgame using the most basic baby programming. Give it the fully audio & adaptive visual treatment
+- [x] make a microgame using the most basic baby programming. Give it the fully audio & adaptive visual treatment
 
 next version
 

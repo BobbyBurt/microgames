@@ -3,6 +3,10 @@ import eventsCenter from "../eventsCenter.js";
 const HINT = 'break!';
 const ICE_HEALTH = 9;
 
+/**
+ * this was the first microgame I tried my hand at making. An icebreaker, if you will
+ */
+
 export default class game extends Phaser.Scene
 {
     constructor()
