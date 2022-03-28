@@ -12,8 +12,7 @@ export default class icebreaker extends microgame
 {
     constructor()
     {
-        // super('icebreaker');
-        // the issue is that all microgames share a key with this method
+        super('icebreaker');
     }
 
     // configure scene
@@ -69,6 +68,8 @@ export default class icebreaker extends microgame
                 eventsCenter.emit('win');
             }
         });
+
+        super.create(HINT);
     }
 
     update()

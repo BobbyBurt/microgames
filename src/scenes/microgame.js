@@ -6,9 +6,9 @@ import eventsCenter from "../eventsCenter.js";
 
 export default class game extends Phaser.Scene
 {
-    constructor()
+    constructor(key)
     {
-        super('microgame'); // defining unique key
+        super(key); // defining unique key
     }
 
     // configure scene
@@ -23,11 +23,11 @@ export default class game extends Phaser.Scene
 
     }
 
-    create()
+    create(hint)
     {
         // HINT
 
-        this.hint = this.add.text(0, 0, HINT, {fontSize: 48});
+        this.hint = this.add.text(0, 0, hint, {fontSize: 48});
         this.hint.setStroke('#262626', 20);
         this.hint.setOrigin(0.5, 0.5);
     
@@ -46,6 +46,7 @@ export default class game extends Phaser.Scene
         // RESIZE
 
         this.resizeField(this.scale.width, this.scale.height);
+
     }
 
     update()
@@ -55,6 +56,6 @@ export default class game extends Phaser.Scene
 
     resizeField(w, h)
     {
-        
+
     }
 }
