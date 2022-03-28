@@ -1,6 +1,7 @@
 import eventsCenter from "../eventsCenter.js";
 
 const HINT = 'break!';
+const ICE_HEALTH = 9;
 
 export default class game extends Phaser.Scene
 {
@@ -27,14 +28,32 @@ export default class game extends Phaser.Scene
 
         this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#cce5ff");
 
-        //  CREATE IMAGE
+        // CHARACTER
         
         this.character = this.add.image(0, 0, 'character');
         this.character.setOrigin(0.5, 0.5);
 
-        this.ice = this.add.graphics();
-        this.ice.fillStyle(0x80bdff, .3);
-        this.ice.fillRect((this.scale.width / 2) - 100, (this.scale.height / 2) - 100, 200, 200);
+        // ICE
+        
+        this.ice = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300), Phaser.Geom.Rectangle.Contains);
+        this.ice.fillStyle(0x80bdff, .9);
+        this.ice.fillRoundedRect((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300, 10);
+        
+        this.iceHealth = ICE_HEALTH;
+        this.ice.on('pointerdown', () => {
+
+            if (this.iceHealth == 0) return;
+
+            this.iceHealth--;
+            this.ice.clear();
+            this.ice.fillStyle(0x80bdff, '.' + this.iceHealth); // this non-typed language is freeing
+            this.ice.fillRoundedRect((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300, 10);
+
+            if (this.iceHealth == 0)
+            {
+                eventsCenter.emit('win');
+            }
+        });
 
 
         // this.logo.on('pointerdown', () => {
