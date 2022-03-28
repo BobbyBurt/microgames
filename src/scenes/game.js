@@ -1,7 +1,7 @@
 import eventsCenter from "../eventsCenter.js";
 
 export default class game extends Phaser.Scene
-{
+{   
     constructor()
     {
         super('game'); // defining unique key
@@ -16,7 +16,7 @@ export default class game extends Phaser.Scene
     // queue assets to load
     preload()
     {
-        this.load.image('logo', 'assets/phaser3-logo.png');
+        this.load.image('stall', 'assets/stall.png');
     }
 
     create()
@@ -27,7 +27,7 @@ export default class game extends Phaser.Scene
 
         //  CREATE IMAGE
         
-        this.logo = this.add.image(0, 0, 'logo').setInteractive();
+        this.logo = this.add.image(0, 0, 'stall').setInteractive();
         this.logo.setOrigin(0.5, 0.5);
 
         this.logo.on('pointerdown', () => {
