@@ -35,15 +35,23 @@ For now I’m not too worried about the framework and technicality of microgames
 <br /> 
 
 ## To-do / Left-of
-v1
+
+this version
+
 - [x] menu scene should be woken up, not started. Same instance will persist
 - [x] simple timer display. it can just be a bar at the bottom
 - [x] timer interpolates color. Currently can't figure out how to convert color object to string that can be used for graphic fillstyle
 - [x] indicate success or failure in menu scene
 - [ ] make a microgame using the most basic baby programming. Give it the fully audio & adaptive visual treatment
-v2
+
+next version
+
 - [ ] ability to select microgame in menu scene
 - [ ] current screen resize method only allows resizing of elements in "main" scene (?) It should be replaced with an event solution if possible
+
+future versions
+
+- [ ] setup timer to accept variable time
 
 <br /> 
 
