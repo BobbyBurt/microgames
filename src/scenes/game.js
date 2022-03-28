@@ -1,7 +1,9 @@
 import eventsCenter from "../eventsCenter.js";
 
+const HINT = 'break!';
+
 export default class game extends Phaser.Scene
-{   
+{
     constructor()
     {
         super('game'); // defining unique key
@@ -16,40 +18,43 @@ export default class game extends Phaser.Scene
     // queue assets to load
     preload()
     {
-        this.load.image('stall', 'assets/stall.png');
+        this.load.image('character', 'assets/frozen.png');
     }
 
     create()
     {    
+        
         // BG
 
-        this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#333333");
+        this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#cce5ff");
 
         //  CREATE IMAGE
         
-        this.logo = this.add.image(0, 0, 'stall').setInteractive();
-        this.logo.setOrigin(0.5, 0.5);
+        this.character = this.add.image(0, 0, 'character');
+        this.character.setOrigin(0.5, 0.5);
 
-        this.logo.on('pointerdown', () => {
+        // this.logo.on('pointerdown', () => {
 
-            this.logo.setTint(Math.random() * 16000000);
+        //     this.logo.setTint(Math.random() * 16000000);
             
-            eventsCenter.emit('win');
-        });
-
-        eventsCenter.on('timer-end', () =>
-        {
-            this.scene.stop(this.scene.key);
-        });
+        //     eventsCenter.emit('win');
+        // });
 
         // HINT
 
-        this.hint = this.add.text(0, 0, 'Tap!', {fontSize: 48});
+        this.hint = this.add.text(0, 0, hint, {fontSize: 48});
         this.hint.setOrigin(0.5, 0.5);
     
         this.hintTimer = this.time.delayedCall(1000, () => {
 
             this.hint.visible = false;
+        });
+
+        // TIMER END
+
+        eventsCenter.on('timer-end', () =>
+        {
+            this.scene.stop(this.scene.key);
         });
 
         // RESIZE
