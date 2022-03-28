@@ -20,6 +20,7 @@ Each microgame dan be initialized with a 1-3 integer as a difficulty setting, wh
 
 ### Time
 Timer time varies depending on the stage and how many microgames in the player is. I'll have to make microgames with variable time in mind. On top of screen scaling...
+Timer visual can be a hand counting down in place of WW's bomb. Or is that lame
 
 ### Gamemodes
 I love the idea of a hot potato multiplayer mode where players pass the phone in a circle taking turns. It could be similar to multiplayer modes in WW Smooth Moves
@@ -34,25 +35,22 @@ For now I’m not too worried about the framework and technicality of microgames
 
 <br /> 
 
-## To-do / Left-of
-
-this version
-
-- [x] menu scene should be woken up, not started. Same instance will persist
-- [x] simple timer display. it can just be a bar at the bottom
-- [x] timer interpolates color. Currently can't figure out how to convert color object to string that can be used for graphic fillstyle
-- [x] indicate success or failure in menu scene
-- [x] make a microgame using the most basic baby programming. Give it the fully audio & adaptive visual treatment
-
-next version
+## To-do
 
 - [ ] ability to select microgame in menu scene
-- [ ] current screen resize method only allows resizing of elements in "main" scene (?) It should be replaced with an event solution if possible
+- [ ] Obvious win / lose feedback in menu scene
+- [ ] learn how best to do audio
+  - [ ] add audio to icebreaker microgame
+- [ ] give icebreaker a visual treatment with original assets.
+  - [ ] improve break feedback
+- [ ] microgame scene which all microgames extend to reduce redundancy
 
-future versions
+### eventually
 
 - [ ] setup timer to accept variable time
 - [ ] figure out how to make a game scene to extend
+- [ ] Scale helper class with general functions
+- [ ] current screen resize method only allows resizing of elements in "main" scene (?) It should be replaced with an event solution if possible
 
 <br /> 
 
