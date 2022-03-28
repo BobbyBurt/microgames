@@ -20,6 +20,7 @@ export default class game extends Phaser.Scene
     preload()
     {
         this.load.image('character', 'assets/frozen.png');
+        this.load.image('character-win', 'assets/not-frozen.png');
     }
 
     create()
@@ -32,6 +33,11 @@ export default class game extends Phaser.Scene
         
         this.character = this.add.image(0, 0, 'character');
         this.character.setOrigin(0.5, 0.5);
+
+        this.characterUnfroze = this.add.image(0, 0, 'character-win');
+        this.characterUnfroze.setOrigin(0.5, 0.5);
+        this.characterUnfroze.setVisible(false);
+        // TODO - these shouldn't be two images, but im a baby programmer waah its too hard :(
 
         // ICE
         
@@ -51,17 +57,12 @@ export default class game extends Phaser.Scene
 
             if (this.iceHealth == 0)
             {
+                this.character.setVisible(false);
+                this.characterUnfroze.setVisible(true);
+                
                 eventsCenter.emit('win');
             }
         });
-
-
-        // this.logo.on('pointerdown', () => {
-
-        //     this.logo.setTint(Math.random() * 16000000);
-            
-        //     eventsCenter.emit('win');
-        // });
 
         // HINT
 
@@ -95,5 +96,6 @@ export default class game extends Phaser.Scene
     {
         this.hint.setPosition(w / 2, h / 3);
         this.character.setPosition(w / 2, h / 2);
+        this.characterUnfroze.setPosition(w / 2, h / 2);
     }
 }
