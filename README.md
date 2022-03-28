@@ -52,6 +52,7 @@ next version
 future versions
 
 - [ ] setup timer to accept variable time
+- [ ] figure out how to make a game scene to extend
 
 <br /> 
 
