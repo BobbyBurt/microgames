@@ -1,4 +1,5 @@
 import eventsCenter from "../eventsCenter.js";
+import microgame from "./microgame.js";
 
 const HINT = 'break!';
 const ICE_HEALTH = 9;
@@ -7,11 +8,11 @@ const ICE_HEALTH = 9;
  * this was the first microgame I tried my hand at making. An icebreaker, if you will
  */
 
-export default class game extends Phaser.Scene
+export default class icebreaker extends microgame
 {
     constructor()
     {
-        super('game'); // defining unique key
+        super('icebreaker');
     }
 
     // configure scene
@@ -68,27 +69,7 @@ export default class game extends Phaser.Scene
             }
         });
 
-        // HINT
-
-        this.hint = this.add.text(0, 0, HINT, {fontSize: 48});
-        this.hint.setStroke('#262626', 20);
-        this.hint.setOrigin(0.5, 0.5);
-    
-        this.hintTimer = this.time.delayedCall(1000, () => {
-
-            this.hint.visible = false;
-        });
-
-        // TIMER END
-
-        eventsCenter.on('timer-end', () =>
-        {
-            this.scene.stop(this.scene.key);
-        });
-
-        // RESIZE
-
-        this.resizeField(this.scale.width, this.scale.height);
+        super.create(HINT);
     }
 
     update()

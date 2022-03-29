@@ -43,7 +43,7 @@ For now I’m not too worried about the framework and technicality of microgames
   - [ ] add audio to icebreaker microgame
 - [ ] give icebreaker a visual treatment with original assets.
   - [ ] improve break feedback
-- [ ] microgame scene which all microgames extend to reduce redundancy
+- [x] microgame scene which all microgames extend to reduce redundancy
 
 ### eventually
 
