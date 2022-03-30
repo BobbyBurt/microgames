@@ -1,4 +1,4 @@
-class boot extends Phaser.Scene {
+class scalemanager extends Phaser.Scene {
 
     constructor ()
     {
@@ -36,4 +36,4 @@ class boot extends Phaser.Scene {
 
 }
 
-export default boot;
+export default scalemanager;
