@@ -26,6 +26,7 @@ class scalemanager extends Phaser.Scene {
             if (scene.scene.settings.active) {
                 // Scale the camera
                 scene.cameras.main.setViewport(0, 0, w, h);
+                scene.cameras.main.setScroll(-w/2, -h/2);
                 if (scene.resizeField) {
                     // Scale/position stuff in the scene itself with this method, that the scene must implement.
                     scene.resizeField(w, h);

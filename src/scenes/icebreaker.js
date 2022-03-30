@@ -38,6 +38,7 @@ export default class icebreaker extends microgame
         
         this.character = this.add.image(0, 0, 'character');
         this.character.setOrigin(0.5, 0.5);
+        console.log("character x: " + this.character.x);
 
         this.characterUnfroze = this.add.image(0, 0, 'character-win');
         this.characterUnfroze.setOrigin(0.5, 0.5);
@@ -46,9 +47,9 @@ export default class icebreaker extends microgame
 
         // ICE
         
-        this.ice = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300), Phaser.Geom.Rectangle.Contains);
+        this.ice = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(-150, -150, 300, 300), Phaser.Geom.Rectangle.Contains);
         this.ice.fillStyle(0x80bdff, .9);
-        this.ice.fillRoundedRect((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300, 10);
+        this.ice.fillRoundedRect(-150, -150, 300, 300, 10);
         
         this.iceHealth = ICE_HEALTH;
         this.ice.on('pointerdown', () => {
@@ -58,7 +59,7 @@ export default class icebreaker extends microgame
             this.iceHealth--;
             this.ice.clear();
             this.ice.fillStyle(0x80bdff, '.' + this.iceHealth); // this non-typed language is freeing
-            this.ice.fillRoundedRect((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300, 10);
+            this.ice.fillRoundedRect(-150, -150, 300, 300, 10);
 
             if (this.iceHealth == 0)
             {
@@ -79,8 +80,8 @@ export default class icebreaker extends microgame
 
     resizeField(w, h)
     {
-        this.hint.setPosition(w / 2, h / 3);
-        this.character.setPosition(w / 2, h / 2);
-        this.characterUnfroze.setPosition(w / 2, h / 2);
+        // this.hint.setPosition(w / 2, h / 3);
+        // this.character.setPosition(w / 2, h / 2);
+        // this.characterUnfroze.setPosition(w / 2, h / 2);
     }
 }
