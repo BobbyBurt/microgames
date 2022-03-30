@@ -38,7 +38,6 @@ export default class icebreaker extends microgame
         
         this.character = this.add.image(0, 0, 'character');
         this.character.setOrigin(0.5, 0.5);
-        console.log("character x: " + this.character.x);
 
         this.characterUnfroze = this.add.image(0, 0, 'character-win');
         this.characterUnfroze.setOrigin(0.5, 0.5);
