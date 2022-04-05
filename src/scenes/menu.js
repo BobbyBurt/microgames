@@ -39,10 +39,15 @@ sadfasdfasdfasd
         {
             this.instructionText.setColor('#00ff00');
         });
+
+        eventsCenter.on('resize', (size) => {
+
+            this.resize(size);
+        });
     }
 
-    resizeField(w, h)
+    resize(size)
     {
-        
+        console.log(size.w, size.h);
     }
 }
