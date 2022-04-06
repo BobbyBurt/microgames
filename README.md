@@ -44,7 +44,6 @@ For now I’m not too worried about the framework and technicality of microgames
 - [ ] give icebreaker a visual treatment with original assets.
   - [ ] improve break feedback
 - [x] microgame scene which all microgames extend to reduce redundancy
-  - [x] REDO - set menu to start icebreaker, set main to start menu
 - [x] resize solution
 
 ### eventually
