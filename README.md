@@ -45,12 +45,12 @@ For now I’m not too worried about the framework and technicality of microgames
   - [ ] improve break feedback
 - [x] microgame scene which all microgames extend to reduce redundancy
   - [x] REDO - set menu to start icebreaker, set main to start menu
-- [ ] scalemanager class
+- [x] scalemanager stuff
   - [x] REDO - refactor boot into scalemaster
   - [x] REDO - set camera center to 0,0 on resize by setting scroll
-  - [ ] figure out how to call resize functions on each scene's create
+  - [x] figure out how to call resize functions on each scene's create
   - [ ] setup scalemanager to have public functions and variables. Not sure how to do that properly
-  - [ ] turn resize function into an event with a function callback (didn't work for me for some reason)
+  - [x] turn resize function into an event with a function callback (didn't work for me for some reason)
 
 ### eventually
 
