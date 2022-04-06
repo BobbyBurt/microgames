@@ -4,6 +4,9 @@ import eventsCenter from "../eventsCenter.js";
  * this was the first microgame I tried my hand at making. An icebreaker, if you will
  */
 
+let w = 0;
+let h = 0;
+
 export default class game extends Phaser.Scene
 {
     constructor(key)
@@ -25,6 +28,15 @@ export default class game extends Phaser.Scene
 
     create(hint)
     {
+        // RESIZE
+
+        this.resizeField({ w: this.scale.width, h: this.scale.height});
+
+        eventsCenter.on('resize', (size) => {
+
+            this.resizeField(size);
+        });
+
         // HINT
 
         this.hint = this.add.text(0, 0, hint, {fontSize: 48});
@@ -42,19 +54,17 @@ export default class game extends Phaser.Scene
         {
             this.scene.stop(this.scene.key);
         });
+    }
 
-        // RESIZE
+    resizeField(size)
+    {
+        this.cameras.main.setScroll(-size.w/2, -size.h/2);
 
-        this.resizeField(this.scale.width, this.scale.height);
-
+        w = size.w;
+        h = size.h;
     }
 
     update()
-    {
-
-    }
-
-    resizeField(w, h)
     {
 
     }

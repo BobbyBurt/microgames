@@ -8,6 +8,9 @@ const ICE_HEALTH = 9;
  * this was the first microgame I tried my hand at making. An icebreaker, if you will
  */
 
+let w = 0;
+let h = 0;
+
 export default class icebreaker extends microgame
 {
     constructor()
@@ -30,6 +33,15 @@ export default class icebreaker extends microgame
 
     create()
     {
+        // RESIZE
+
+        this.resizeField({ w: this.scale.width, h: this.scale.height});
+
+        eventsCenter.on('resize', (size) => {
+
+            this.resizeField(size);
+        });
+        
         // BG
 
         this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#cce5ff");
@@ -46,9 +58,9 @@ export default class icebreaker extends microgame
 
         // ICE
         
-        this.ice = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300), Phaser.Geom.Rectangle.Contains);
+        this.ice = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(-150, -150, 300, 300), Phaser.Geom.Rectangle.Contains);
         this.ice.fillStyle(0x80bdff, .9);
-        this.ice.fillRoundedRect((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300, 10);
+        this.ice.fillRoundedRect(-150, -150, 300, 300, 10);
         
         this.iceHealth = ICE_HEALTH;
         this.ice.on('pointerdown', () => {
@@ -58,7 +70,7 @@ export default class icebreaker extends microgame
             this.iceHealth--;
             this.ice.clear();
             this.ice.fillStyle(0x80bdff, '.' + this.iceHealth); // this non-typed language is freeing
-            this.ice.fillRoundedRect((this.scale.width / 2) - 150, (this.scale.height / 2) - 150, 300, 300, 10);
+            this.ice.fillRoundedRect(-150, -150, 300, 300, 10);
 
             if (this.iceHealth == 0)
             {
@@ -74,13 +86,15 @@ export default class icebreaker extends microgame
 
     update()
     {
-
+        // this.character.setPosition(w / 3, h / 3);
+            // example of using width & height
     }
 
-    resizeField(w, h)
+    resizeField(size)
     {
-        this.hint.setPosition(w / 2, h / 3);
-        this.character.setPosition(w / 2, h / 2);
-        this.characterUnfroze.setPosition(w / 2, h / 2);
+        this.cameras.main.setScroll(-size.w/2, -size.h/2);
+
+        w = size.w;
+        h = size.h;
     }
 }
