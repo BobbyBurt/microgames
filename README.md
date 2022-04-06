@@ -45,7 +45,11 @@ For now I’m not too worried about the framework and technicality of microgames
   - [ ] improve break feedback
 - [x] microgame scene which all microgames extend to reduce redundancy
 - [x] resize solution
+
+## problems
+
 - [ ] Listeners of shutdown scenes seem to still be active, causing errors when they try to resize a scene that isn't there.
+- [ ] timer isn't showing because I haven't updated it to the new resize solution
 
 ### eventually
 
