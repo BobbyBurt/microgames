@@ -21,6 +21,15 @@ sadfasdfasdfasd
 
     create()
     {   
+        // SIZE
+
+        this.resizeField({ w: this.scale.width, h: this.scale.height});
+
+        eventsCenter.on('resize', (size) => {
+
+            this.resizeField(size);
+        });
+
         this.instructionText = this.add.text(0, 0, 'click / tap to start microgame', {fontSize: 32});
         this.instructionText.setOrigin(0.5, 0.5);
 
@@ -33,16 +42,9 @@ sadfasdfasdfasd
             this.instructionText.setColor('#ff0000');
         });
 
-        this.resizeField({ w: this.scale.width, h: this.scale.height});
-
         eventsCenter.on('win', () =>
         {
             this.instructionText.setColor('#00ff00');
-        });
-
-        eventsCenter.on('resize', (size) => {
-
-            this.resizeField(size);
         });
     }
 
@@ -50,6 +52,7 @@ sadfasdfasdfasd
     {
         this.cameras.main.setScroll(-size.w/2, -size.h/2);
         
-        console.log(size.w, size.h);
+        this.w = size.w;
+        this.h = size.h;
     }
 }
