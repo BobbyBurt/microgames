@@ -1,5 +1,5 @@
 import eventsCenter from "../eventsCenter.js";
-import microgame from "./microgame.js";
+import microgame from "../scenes/microgame.js";
 
 const HINT = 'break!';
 const ICE_HEALTH = 9;
