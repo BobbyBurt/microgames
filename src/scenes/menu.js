@@ -33,7 +33,7 @@ sadfasdfasdfasd
             this.instructionText.setColor('#ff0000');
         });
 
-        this.resizeField(this.scale.width, this.scale.height);
+        this.resizeField({ w: this.scale.width, h: this.scale.height});
 
         eventsCenter.on('win', () =>
         {
@@ -42,12 +42,14 @@ sadfasdfasdfasd
 
         eventsCenter.on('resize', (size) => {
 
-            this.resize(size);
+            this.resizeField(size);
         });
     }
 
-    resize(size)
+    resizeField(size)
     {
+        this.cameras.main.setScroll(-size.w/2, -size.h/2);
+        
         console.log(size.w, size.h);
     }
 }
