@@ -33,14 +33,20 @@ export default class menu extends Phaser.Scene
             this.resizeField(size);
         });
 
-        this.instructionText = this.add.text(0, 0, 'click / tap to start microgame', {fontSize: 32});
+        this.instructionText = this.add.text(0, -30, 'microname', {fontSize: 32});
         this.instructionText.setOrigin(0.5, 0.5);
+
+            // MICROGAMES
+
+        /** scene key / name for microgames */
+        this.microgames = ['icebreaker', 'game-2', 'game-3']
+        this.microgameIndex = 0;
 
             // MENU BUTTONS
 
         this.createButton(-60, 10, 220, 100, 'PLAY').on('pointerdown', () => {
 
-            this.scene.launch('icebreaker');
+            this.scene.launch(this.microgames[this.microgameIndex]);
             this.scene.launch('timer');
             this.scene.sleep(this.scene.key);
             
@@ -49,12 +55,12 @@ export default class menu extends Phaser.Scene
 
         this.createButton(200, 10, 100, 100, '>').on('pointerdown', () => {
 
-
+            this.updateSelection(true);
         });
 
         this.createButton(-200, 10, 100, 100, '<').on('pointerdown', () => {
 
-            
+            this.updateSelection(false);
         });
 
         // this.input.on('pointerdown', () => {
@@ -70,6 +76,23 @@ export default class menu extends Phaser.Scene
         {
             this.instructionText.setColor('#00ff00');
         });
+    }
+
+    updateSelection(next)
+    {
+        this.microgameIndex += (next? 1 : -1);
+        
+            // wrap array index
+        if (this.microgameIndex == -1)
+        {
+            this.microgameIndex = this.microgames.length -1;
+        }
+        if (this.microgameIndex == this.microgames.length)
+        {
+            this.microgameIndex = 0;
+        }
+
+        this.instructionText.text = 'microgame: ' + this.microgames[this.microgameIndex];
     }
 
     resizeField(size)
