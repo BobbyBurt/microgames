@@ -27,7 +27,7 @@ window.game = new Phaser.Game({
         height: window.innerHeight * window.devicePixelRatio,
         zoom: 1 / window.devicePixelRatio
     },
-    scene: [scalemanager, menu, timer,
+    scene: [scalemanager, timer, menu,
         icebreaker
     ]
     });

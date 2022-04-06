@@ -33,7 +33,7 @@ export default class menu extends Phaser.Scene
             this.resizeField(size);
         });
 
-        this.instructionText = this.add.text(0, -30, 'microname', {fontSize: 32});
+        this.instructionText = this.add.text(0, -30, 'microgame', {fontSize: 32});
         this.instructionText.setOrigin(0.5, 0.5);
 
             // MICROGAMES

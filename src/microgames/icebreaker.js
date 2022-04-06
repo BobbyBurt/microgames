@@ -44,7 +44,7 @@ export default class icebreaker extends microgame
         
         // BG
 
-        this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#cce5ff");
+        // this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#cce5ff");
 
         // CHARACTER
         

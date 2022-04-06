@@ -37,19 +37,16 @@ For now I’m not too worried about the framework and technicality of microgames
 
 ## To-do
 
-- [ ] ability to select microgame in menu scene
+- [x] ability to select microgame in menu scene
 - [ ] Obvious win / lose feedback in menu scene
-- [ ] learn how best to do audio
-  - [ ] add audio to icebreaker microgame
-- [ ] give icebreaker a visual treatment with original assets.
-  - [ ] improve break feedback
 - [x] microgame scene which all microgames extend to reduce redundancy
 - [x] resize solution
 
 ## problems
 
 - [ ] Listeners of shutdown scenes seem to still be active, causing errors when they try to resize a scene that isn't there.
-- [ ] timer isn't showing because I haven't updated it to the new resize solution
+- [ ] why is the timer rendering under the microgame?
+  - [ ] and why can I see one frame of transition between scene changes?
 
 ### eventually
 
