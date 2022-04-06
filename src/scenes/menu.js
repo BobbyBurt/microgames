@@ -1,5 +1,8 @@
 import eventsCenter from "../eventsCenter.js";
 
+let w = 0;
+let h = 0;
+
 export default class menu extends Phaser.Scene
 {
     constructor()
@@ -12,7 +15,7 @@ export default class menu extends Phaser.Scene
     {
         
     }
-sadfasdfasdfasd
+
     // queue assets to load
     preload()
     {
@@ -52,7 +55,7 @@ sadfasdfasdfasd
     {
         this.cameras.main.setScroll(-size.w/2, -size.h/2);
         
-        this.w = size.w;
-        this.h = size.h;
+        w = size.w;
+        h = size.h;
     }
 }
