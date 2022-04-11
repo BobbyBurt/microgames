@@ -9,11 +9,24 @@ import timer from './scenes/timer.js'
 import icebreaker from './microgames/icebreaker.js'
 import physics from './microgames/physics.js'
 
-console.dir(Phaser)
+// console.dir(Phaser)
 
 window.game = new Phaser.Game({
     type: Phaser.WEBGL,
     backgroundColor: '#969fa3',
+    title: 'Microgames',
+    url: 'https://www.newgrounds.com/portal/view/project/1855162',
+    version: '2.0 pre alpha',
+    banner: {
+        // text: '#ffffff',
+        // background: [
+        //     '#fff200',
+        //     '#38f0e8',
+        //     '#00bff3',
+        //     '#ff0066'
+        // ],
+        hidePhaser: false
+    },
     input: {
         gamepad: true
     },
