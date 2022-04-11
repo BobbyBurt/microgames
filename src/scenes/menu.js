@@ -1,4 +1,5 @@
 import eventsCenter from "../eventsCenter.js";
+import Newgrounds from "../lib/newgrounds.js"
 
 let w = 0;
 let h = 0;
@@ -24,6 +25,12 @@ export default class menu extends Phaser.Scene
 
     create()
     {   
+        // NGio
+        
+        Newgrounds.Init('54370:8UALd0yw', '41Qr9LkSla9bfOkVxI6Hxg==', 1);
+        console.log(Newgrounds.responseText);
+        Newgrounds.Call('Event.logEvent', {event_name: 'test', host: 'localHost'});
+        
         // SIZE
 
         this.resizeField({ w: this.scale.width, h: this.scale.height});
