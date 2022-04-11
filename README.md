@@ -37,20 +37,16 @@ For now I’m not too worried about the framework and technicality of microgames
 
 ## To-do
 
-- [ ] ability to select microgame in menu scene
+- [x] ability to select microgame in menu scene
 - [ ] Obvious win / lose feedback in menu scene
-- [ ] learn how best to do audio
-  - [ ] add audio to icebreaker microgame
-- [ ] give icebreaker a visual treatment with original assets.
-  - [ ] improve break feedback
 - [x] microgame scene which all microgames extend to reduce redundancy
-  - [x] REDO - set menu to start icebreaker, set main to start menu
-- [x] scalemanager stuff
-  - [x] REDO - refactor boot into scalemaster
-  - [x] REDO - set camera center to 0,0 on resize by setting scroll
-  - [x] figure out how to call resize functions on each scene's create
-  - [ ] setup scalemanager to have public functions and variables. Not sure how to do that properly
-  - [x] turn resize function into an event with a function callback (didn't work for me for some reason)
+- [x] resize solution
+
+## problems
+
+- [ ] Listeners of shutdown scenes seem to still be active, causing errors when they try to resize a scene that isn't there.
+- [ ] why is the timer rendering under the microgame?
+  - [ ] and why can I see one frame of transition between scene changes?
 
 ### eventually
 

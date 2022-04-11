@@ -1,9 +1,12 @@
 // import Phaser from './lib/phaser.js'
 
-import game from './scenes/icebreaker.js'
+    // scenes
 import scalemanager from './scenes/scalemanager.js'
 import menu from './scenes/menu.js'
 import timer from './scenes/timer.js'
+
+    // microgames
+import icebreaker from './microgames/icebreaker.js'
 
 console.dir(Phaser)
 
@@ -24,5 +27,7 @@ window.game = new Phaser.Game({
         height: window.innerHeight * window.devicePixelRatio,
         zoom: 1 / window.devicePixelRatio
     },
-    scene: [scalemanager, game, menu, timer]
+    scene: [scalemanager, timer, menu,
+        icebreaker
+    ]
     });

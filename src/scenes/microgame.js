@@ -28,14 +28,6 @@ export default class game extends Phaser.Scene
 
     create(hint)
     {
-        // RESIZE
-
-        this.resizeField({ w: this.scale.width, h: this.scale.height});
-
-        eventsCenter.on('resize', (size) => {
-
-            this.resizeField(size);
-        });
 
         // HINT
 
@@ -54,14 +46,6 @@ export default class game extends Phaser.Scene
         {
             this.scene.stop(this.scene.key);
         });
-    }
-
-    resizeField(size)
-    {
-        this.cameras.main.setScroll(-size.w/2, -size.h/2);
-
-        w = size.w;
-        h = size.h;
     }
 
     update()

@@ -1,5 +1,8 @@
 import eventsCenter from "../eventsCenter.js";
 
+let w = 0;
+let h = 0;
+
 export default class timer extends Phaser.Scene
 {
     constructor()
@@ -9,9 +12,18 @@ export default class timer extends Phaser.Scene
     
     create()
     {
+        // SIZE
+
+        this.resizeField({ w: this.scale.width, h: this.scale.height});
+
+        eventsCenter.on('resize', (size) => {
+
+            this.resizeField(size);
+        });
+        
         // this.timerText = this.add.text(740, 150, '000', {color: 'white', fontSize: '30px '});
         
-        this.graphics = this.add.graphics({ x: 100, y: this.scale.height - 50});
+        this.graphics = this.add.graphics({ x: -(w/2) + 100, y: (h/2) - 75});
 
         this.timer = this.time.delayedCall(4000, () => {
 
@@ -25,7 +37,7 @@ export default class timer extends Phaser.Scene
     {
         // this.timerText.text = this.timer.getProgress().toString().substr(0, 4);
 
-        this.bar = Phaser.Math.Interpolation.Linear([this.scale.width - 200, 0], this.timer.getProgress());
+        this.bar = Phaser.Math.Interpolation.Linear([w - 200, 0], this.timer.getProgress());
         // this.timerText.text = this.bar;
 
         this.color1 = new Phaser.Display.Color(51, 153, 255);
@@ -43,5 +55,13 @@ export default class timer extends Phaser.Scene
             this.graphics.fillStyle(this.stringColor);
             this.graphics.fillRect(0, 0, this.bar, 30);
         }
+    }
+
+    resizeField(size)
+    {
+        this.cameras.main.setScroll(-size.w/2, -size.h/2);
+        
+        w = size.w;
+        h = size.h;
     }
 }
