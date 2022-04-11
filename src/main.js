@@ -7,6 +7,7 @@ import timer from './scenes/timer.js'
 
     // microgames
 import icebreaker from './microgames/icebreaker.js'
+import physics from './microgames/physics.js'
 
 console.dir(Phaser)
 
@@ -27,7 +28,14 @@ window.game = new Phaser.Game({
         height: window.innerHeight * window.devicePixelRatio,
         zoom: 1 / window.devicePixelRatio
     },
+    physics: {
+        default: 'arcade',
+        arcade: {
+            debug: true,
+            gravity: { y: 150 }
+        }
+    },
     scene: [scalemanager, timer, menu,
-        icebreaker
+        icebreaker, physics
     ]
     });
