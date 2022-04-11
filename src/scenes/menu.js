@@ -1,8 +1,82 @@
 import eventsCenter from "../eventsCenter.js";
-import Newgrounds from "../lib/newgrounds.js"
+// import Newgrounds from "../lib/newgrounds.js"
 
 let w = 0;
 let h = 0;
+
+var ngio = new Newgrounds.io.core('54370:8UALd0yw', '41Qr9LkSla9bfOkVxI6Hxg==');
+
+function onLoggedIn() {
+	console.log("Welcome " + ngio.user.name + "!");
+}
+
+function onLoginFailed() {
+	console.log("There was a problem logging in: " . ngio.login_error.message );
+}
+
+function onLoginCancelled() {
+	console.log("The user cancelled the login.");
+}
+
+/*
+ * Before we do anything, we need to get a valid Passport session.  If the player
+ * has previously logged in and selected 'remember me', we may have a valid session
+ * already saved locally.
+ */
+function initSession() {
+	ngio.getValidSession(function() {
+		if (ngio.user) {
+			/* 
+			 * If we have a saved session, and it has not expired, 
+			 * we will also have a user object we can access.
+			 * We can go ahead and run our onLoggedIn handler here.
+			 */
+			onLoggedIn();
+		} else {
+			/*
+			 * If we didn't have a saved session, or it has expired
+			 * we should have been given a new one at this point.
+			 * This is where you would draw a 'sign in' button and
+			 * have it execute the following requestLogin function.
+			 */
+		}
+
+	});
+}
+
+/* 
+ * Call this when the user clicks a 'sign in' button from your game.  It MUST be called from
+ * a mouse-click event or pop-up blockers will prevent the Newgrounds Passport page from loading.
+ */
+function requestLogin() {
+	ngio.requestLogin(onLoggedIn, onLoginFailed, onLoginCancelled);
+	/* you should also draw a 'cancel login' buton here */
+}
+
+/*
+ * Call this when the user clicks a 'cancel login' button from your game.
+ */
+function cancelLogin() {
+	/*
+	 * This cancels the login request made in the previous function. 
+	 * This will also trigger your onLoginCancelled callback.
+	 */
+	ngio.cancelLoginRequest();
+}
+
+/*
+ * If your user is logged in, you should also draw a 'sign out' button for them
+ * and have it call this.
+ */
+function logOut() {
+	ngio.logOut(function() {
+		/*
+		 * Because we have to log the player out on the server, you will want
+		 * to handle any post-logout stuff in this function, wich fires after
+		 * the server has responded.
+		 */
+	});
+}
 
 export default class menu extends Phaser.Scene
 {
@@ -25,12 +99,16 @@ export default class menu extends Phaser.Scene
 
     create()
     {   
-        // NGio
+        // NGio - KBAP
         
-        Newgrounds.Init('54370:8UALd0yw', '41Qr9LkSla9bfOkVxI6Hxg==', 1);
-        console.log(Newgrounds.responseText);
-        Newgrounds.Call('Event.logEvent', {event_name: 'test', host: 'localHost'});
-        
+        // Newgrounds.Init('54370:8UALd0yw', '41Qr9LkSla9bfOkVxI6Hxg==', 1);
+        // console.log(Newgrounds.responseText);
+        // Newgrounds.Call('Event.logEvent', {event_name: 'test', host: 'localHost'});
+
+        // NGio - official
+
+        initSession();
+
         // SIZE
 
         this.resizeField({ w: this.scale.width, h: this.scale.height});
@@ -63,6 +141,7 @@ export default class menu extends Phaser.Scene
         this.createButton(200, 10, 100, 100, '>').on('pointerdown', () => {
 
             this.updateSelection(true);
+            requestLogin();
         });
 
         this.createButton(-200, 10, 100, 100, '<').on('pointerdown', () => {

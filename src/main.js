@@ -9,8 +9,6 @@ import timer from './scenes/timer.js'
 import icebreaker from './microgames/icebreaker.js'
 import physics from './microgames/physics.js'
 
-// console.dir(Phaser)
-
 window.game = new Phaser.Game({
     type: Phaser.WEBGL,
     backgroundColor: '#969fa3',
