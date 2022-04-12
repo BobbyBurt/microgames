@@ -1,10 +1,26 @@
 import eventsCenter from "../eventsCenter.js";
-// import Newgrounds from "../lib/newgrounds.js"
 
 let w = 0;
 let h = 0;
 
 var ngio = new Newgrounds.io.core('54370:8UALd0yw', '41Qr9LkSla9bfOkVxI6Hxg==');
+ngio.debug = true;
+
+
+/* vars to record any medals and scoreboards that get loaded */
+var medals, scoreboards;
+
+/* handle loaded medals */
+function onMedalsLoaded(result) {
+	if (result.success) medals = result.medals;
+    console.log(result.medals);
+}
+
+/* handle loaded scores */
+function onScoreboardsLoaded(result) {
+	if (result.success) scoreboards = result.scoreboards;
+    console.log(result.scoreboards)
+}
 
 function onLoggedIn() {
 	console.log("Welcome " + ngio.user.name + "!");
@@ -78,6 +94,62 @@ function logOut() {
 	});
 }
 
+/* You could use this function to draw the medal notification on-screen */
+function onMedalUnlocked(medal) {
+	console.log('MEDAL GET:', medal.name);
+}
+
+function unlockMedal(medal_name) {
+
+	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't unlock anything */
+	if (!ngio.user) return;
+
+	var medal;
+
+	for (var i = 0; i < medals.length; i++) {
+
+		medal = medals[i];
+		/* look for a matching medal name */
+		if (medal.name == medal_name) {
+
+			console.log(medal.unlocked);
+            /* we can skip unlocking a medal that's already been earned */
+			if (!medal.unlocked) {
+
+				/* unlock the medal from the server */
+				ngio.callComponent('Medal.unlock', {id:medal.id}, function(result) {
+
+					if (result.success)
+                    {
+                        onMedalUnlocked(result.medal);
+                        medal.unlocked = true;
+                    }
+
+				});
+			}
+
+			return;
+		}
+	}
+}
+
+function postScore(board_name, score_value) {
+
+	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't post anything */
+	if (!ngio.user) return;
+
+	var score;
+    var scoreboard;
+
+	for (var i = 0; i < scoreboards.length; i++) {
+
+		scoreboard = scoreboards[i];
+
+		ngio.callComponent('ScoreBoard.postScore', {id:scoreboard.id, value:score_value});
+	}
+}
+
+
 export default class menu extends Phaser.Scene
 {
     constructor()
@@ -99,15 +171,14 @@ export default class menu extends Phaser.Scene
 
     create()
     {   
-        // NGio - KBAP
-        
-        // Newgrounds.Init('54370:8UALd0yw', '41Qr9LkSla9bfOkVxI6Hxg==', 1);
-        // console.log(Newgrounds.responseText);
-        // Newgrounds.Call('Event.logEvent', {event_name: 'test', host: 'localHost'});
-
         // NGio - official
 
         initSession();
+
+        /* load our medals and scoreboards from the server */
+        ngio.queueComponent("Medal.getList", {}, onMedalsLoaded);
+        ngio.queueComponent("ScoreBoard.getBoards", {}, onScoreboardsLoaded);
+        ngio.executeQueue();
 
         // SIZE
 
@@ -142,6 +213,9 @@ export default class menu extends Phaser.Scene
 
             this.updateSelection(true);
             requestLogin();
+            unlockMedal('test');
+
+            postScore('test', 1234);
         });
 
         this.createButton(-200, 10, 100, 100, '<').on('pointerdown', () => {
