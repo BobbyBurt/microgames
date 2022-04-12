@@ -4,7 +4,6 @@ let w = 0;
 let h = 0;
 
 var ngio = new Newgrounds.io.core('54370:8UALd0yw', '41Qr9LkSla9bfOkVxI6Hxg==');
-ngio.debug = true;
 
 
 /* vars to record any medals and scoreboards that get loaded */
