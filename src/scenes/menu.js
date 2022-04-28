@@ -3,6 +3,7 @@ import eventsCenter from "../eventsCenter.js";
 let w = 0;
 let h = 0;
 
+
 export default class menu extends Phaser.Scene
 {
     constructor()

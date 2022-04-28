@@ -4,12 +4,11 @@
 import scalemanager from './scenes/scalemanager.js'
 import menu from './scenes/menu.js'
 import timer from './scenes/timer.js'
+import newgroundsio from './scenes/newgroundsio.js'
 
     // microgames
 import icebreaker from './microgames/icebreaker.js'
 import physics from './microgames/physics.js'
-
-// console.dir(Phaser)
 
 window.game = new Phaser.Game({
     type: Phaser.WEBGL,
@@ -48,7 +47,7 @@ window.game = new Phaser.Game({
             gravity: { y: 150 }
         }
     },
-    scene: [scalemanager, timer, menu,
+    scene: [scalemanager, timer, menu, newgroundsio,
         icebreaker, physics
     ]
     });

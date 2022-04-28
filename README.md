@@ -41,6 +41,8 @@ For now I’m not too worried about the framework and technicality of microgames
 - [ ] Obvious win / lose feedback in menu scene
 - [x] microgame scene which all microgames extend to reduce redundancy
 - [x] resize solution
+- [ ] NGio test
+- [ ] NGio in seperate class
 
 ## problems
 

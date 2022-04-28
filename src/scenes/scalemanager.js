@@ -15,6 +15,7 @@ class scalemanager extends Phaser.Scene {
         window.addEventListener('resize', this.resize.bind(this));
 
         this.scene.start('menu');
+        this.scene.launch('newgroundsio');
     }
 
     resize ()
