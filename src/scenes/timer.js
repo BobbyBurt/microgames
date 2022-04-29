@@ -32,7 +32,7 @@ export default class timer extends Phaser.Scene
     {
         // this.timerText.text = this.timer.getProgress().toString().substr(0, 4);
 
-        this.bar = Phaser.Math.Interpolation.Linear([this.registry.values.w + 100, 0], this.timer.getProgress());
+        this.bar = Phaser.Math.Interpolation.Linear([this.registry.values.w - 100, 0], this.timer.getProgress());
         // this.timerText.text = this.bar;
 
         this.color1 = new Phaser.Display.Color(51, 153, 255);
