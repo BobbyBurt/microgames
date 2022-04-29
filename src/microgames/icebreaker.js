@@ -25,15 +25,20 @@ export default class icebreaker extends microgame
     {
         // this.load.image('character', 'assets/frozen.png');
         // this.load.image('character-win', 'assets/not-frozen.png');
-        this.load.image('shard', 'assets/shard.png');
         
         this.load.atlas('character', 'assets/character.png', 'assets/character.json');
-
         this.load.atlas('ice', 'assets/ice.png', 'assets/ice.json');
+
+        this.load.image('shard', 'assets/shard.png');
+
+        this.load.audio('ice-audio', 'assets/chik.wav');
+        this.load.audio('yeah', 'assets/wario.wav');
     }
 
     create()
     {   
+        this.yeahAudio = this.sound.add('yeah');
+        
         // CHARACTER
     
         const characterAnimConfig =
@@ -76,11 +81,7 @@ export default class icebreaker extends microgame
         this.ice = this.add.sprite(0, 0, 'ice').setInteractive().setOrigin(0.5, 0.5);
         // this.input.enableDebug(this.ice);
 
-        // this.ice = this.add.graphics().setInteractive(new Phaser.Geom.Rectangle(-150, -150, 300, 300), Phaser.Geom.Rectangle.Contains);
-        // this.ice.fillStyle(0x80bdff, .9);
-        // this.ice.fillRoundedRect(-150, -150, 300, 300, 10);
-        
-        // ^ graphic object leftover
+        this.iceAudio = this.sound.add('ice-audio');
         
         this.iceHealth = 0;
         this.ice.on('pointerdown', (object) => 
@@ -97,9 +98,13 @@ export default class icebreaker extends microgame
 
             this.ice.setFrame('ice/000' + this.iceHealth);
 
+            this.iceAudio.play();
+
             if (this.iceHealth == ICE_HEALTH)
             {
                 this.character.setFrame('character/0001');
+
+                this.yeahAudio.play()
 
                 this.ice.setVisible(false);
                 
