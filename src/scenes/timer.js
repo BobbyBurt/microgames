@@ -1,8 +1,5 @@
 import eventsCenter from "../eventsCenter.js";
 
-let w = 0;
-let h = 0;
-
 export default class timer extends Phaser.Scene
 {
     constructor()
@@ -12,24 +9,22 @@ export default class timer extends Phaser.Scene
     
     create()
     {
-        // SIZE
+        eventsCenter.on('resize', () => {
 
-        this.resizeField({ w: this.scale.width, h: this.scale.height});
-
-        eventsCenter.on('resize', (size) => {
-
-            this.resizeField(size);
+            this.resizeScene();
         });
         
         // this.timerText = this.add.text(740, 150, '000', {color: 'white', fontSize: '30px '});
         
-        this.graphics = this.add.graphics({ x: -(w/2) + 100, y: (h/2) - 75});
+        // this.graphics = this.add.graphics({ x: -(this.registry.values.w/2) + 100, y: (this.registry.values.h/2) - 75});
+        this.graphics = this.add.graphics({ x: 100, y: this.registry.values.h - 75});
 
         this.timer = this.time.delayedCall(4000, () => {
 
             eventsCenter.emit('timer-end');
             this.scene.wake('menu');
             this.scene.stop(this.scene.key);
+            eventsCenter.off('resize', null, this);
         });
     }
 
@@ -37,7 +32,7 @@ export default class timer extends Phaser.Scene
     {
         // this.timerText.text = this.timer.getProgress().toString().substr(0, 4);
 
-        this.bar = Phaser.Math.Interpolation.Linear([w - 200, 0], this.timer.getProgress());
+        this.bar = Phaser.Math.Interpolation.Linear([this.registry.values.w + 100, 0], this.timer.getProgress());
         // this.timerText.text = this.bar;
 
         this.color1 = new Phaser.Display.Color(51, 153, 255);
@@ -57,11 +52,9 @@ export default class timer extends Phaser.Scene
         }
     }
 
-    resizeField(size)
+    resizeScene()
     {
-        this.cameras.main.setScroll(-size.w/2, -size.h/2);
-        
-        w = size.w;
-        h = size.h;
+        console.log('timer resize');
+        this.cameras.main.setScroll(-this.registry.values.w/2, -this.registry.values.h/2);
     }
 }

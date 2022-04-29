@@ -1,9 +1,5 @@
 import eventsCenter from "../eventsCenter.js";
 
-let w = 0;
-let h = 0;
-
-
 export default class menu extends Phaser.Scene
 {
     constructor()
@@ -25,15 +21,6 @@ export default class menu extends Phaser.Scene
 
     create()
     {   
-        // SIZE
-
-        this.resizeField({ w: this.scale.width, h: this.scale.height});
-
-        eventsCenter.on('resize', (size) => {
-
-            this.resizeField(size);
-        });
-
         this.instructionText = this.add.text(0, -30, 'microgame', {fontSize: 32});
         this.instructionText.setOrigin(0.5, 0.5);
 
@@ -77,6 +64,18 @@ export default class menu extends Phaser.Scene
         {
             this.instructionText.setColor('#00ff00');
         });
+
+        eventsCenter.on('resize', () => {
+
+            this.resizeScene();
+        });
+
+        this.cameras.main.setScroll(-this.registry.values.w/2, -this.registry.values.h/2);
+    }
+
+    update()
+    {
+        
     }
 
     updateSelection(next)
@@ -96,12 +95,9 @@ export default class menu extends Phaser.Scene
         this.instructionText.text = 'microgame: ' + this.microgames[this.microgameIndex];
     }
 
-    resizeField(size)
+    resizeScene()
     {
-        this.cameras.main.setScroll(-size.w/2, -size.h/2);
-        
-        w = size.w;
-        h = size.h;
+        this.cameras.main.setScroll(-this.registry.values.w/2, -this.registry.values.h/2);
     }
 
     createButton(x, y, w, h, label)

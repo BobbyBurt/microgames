@@ -7,10 +7,6 @@ const ICE_HEALTH = 9;
 /**
  * this was the first microgame I tried my hand at making. An icebreaker, if you will
  */
-
-let w = 0;
-let h = 0;
-
 export default class icebreaker extends microgame
 {
     constructor()
@@ -32,20 +28,7 @@ export default class icebreaker extends microgame
     }
 
     create()
-    {
-        // RESIZE
-
-        this.resizeField({ w: this.scale.width, h: this.scale.height});
-
-        eventsCenter.on('resize', (size) => {
-
-            this.resizeField(size);
-        });
-        
-        // BG
-
-        // this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#cce5ff");
-
+    {   
         // CHARACTER
         
         this.character = this.add.image(0, 0, 'character');
@@ -81,20 +64,27 @@ export default class icebreaker extends microgame
             }
         });
 
+        // TEMPLATE
+
+        eventsCenter.on('resize', () => 
+        {
+            this.resizeScene();
+            console.log('icebreaker resize');
+        });
+
         super.create(HINT);
+
     }
 
     update()
     {
-        // this.character.setPosition(w / 3, h / 3);
+        this.character.setPosition(super.w() / 3, super.h() / 3);
             // example of using width & height
     }
 
-    resizeField(size)
+    resizeScene()
     {
-        this.cameras.main.setScroll(-size.w/2, -size.h/2);
+        this.cameras.main.setScroll(-this.registry.values.w/2, -this.registry.values.h/2);
 
-        w = size.w;
-        h = size.h;
     }
 }

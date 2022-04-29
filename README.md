@@ -41,8 +41,9 @@ For now I’m not too worried about the framework and technicality of microgames
 - [ ] Obvious win / lose feedback in menu scene
 - [x] microgame scene which all microgames extend to reduce redundancy
 - [x] resize solution
-- [ ] NGio test
-- [ ] NGio in seperate class
+  - [x] better resize solution
+- [x] NGio test
+- [x] NGio in seperate class
 
 ## problems
 
@@ -54,6 +55,7 @@ For now I’m not too worried about the framework and technicality of microgames
 
 - [ ] setup timer to accept variable time
 - [ ] figure out how to make a game scene to extend
+- [ ] timer graphic doesn't adapt to resize (this probably isn't a big deal)
 
 <br /> 
 

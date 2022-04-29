@@ -47,13 +47,13 @@ var medals, scoreboards;
 /* handle loaded medals */
 function onMedalsLoaded(result) {
 	if (result.success) medals = result.medals;
-    console.log(result.medals);
+    // console.log(result.medals);
 }
 
 /* handle loaded scores */
 function onScoreboardsLoaded(result) {
 	if (result.success) scoreboards = result.scoreboards;
-    console.log(result.scoreboards)
+    // console.log(result.scoreboards)
 }
 
 function onLoggedIn() {
