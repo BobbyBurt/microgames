@@ -53,6 +53,7 @@ window.game = new Phaser.Game({
             { key: 'SpinePlugin', plugin: window.SpinePlugin, mapping: 'spine' }
         ]
     },
+
     scene: [scalemanager, timer, menu, newgroundsio,
         icebreaker, physics, spine
     ]

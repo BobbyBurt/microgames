@@ -21,7 +21,9 @@ export default class icebreaker extends microgame
 
     preload()
     {
-        this.load.spine('boy', 'assets/spineboy.json', 'assets/spineboy.atlas');
+        this.load.spine('boy', 'assets/skeleton.json', 'assets/skeleton.atlas');
+
+        this.load.image('ball', 'assets/blue-ball.png');
         
         this.load.audio('yeah', 'assets/wario.wav');
     }
@@ -32,8 +34,11 @@ export default class icebreaker extends microgame
         
         // SPINE CREATE
 
-        this.spineTest = this.add.spine(0, 0, 'boy', 'idle', true);
+        this.spineTest = this.add.spine(0, 0, 'boy', 'animation', true);
         // console.log(this.spineTest.state);
+
+        this.origin = this.add.image(0, 0, 'ball');
+        this.origin.setOrigin(0.5, 0.5);
 
         // TEMPLATE
 
