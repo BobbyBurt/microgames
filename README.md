@@ -44,12 +44,13 @@ For now I’m not too worried about the framework and technicality of microgames
   - [x] better resize solution
 - [x] NGio test
 - [x] NGio in seperate class
+- [x] polish icebreaker
 
 ## problems
 
-- [ ] Listeners of shutdown scenes seem to still be active, causing errors when they try to resize a scene that isn't there.
-- [ ] why is the timer rendering under the microgame?
-  - [ ] and why can I see one frame of transition between scene changes?
+- [x] Listeners of shutdown scenes seem to still be active, causing errors when they try to resize a scene that isn't there.
+- [x] why is the timer rendering under the microgame?
+  - [x] and why can I see one frame of transition between scene changes?
 
 ### eventually
 

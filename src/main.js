@@ -9,6 +9,7 @@ import newgroundsio from './scenes/newgroundsio.js'
     // microgames
 import icebreaker from './microgames/icebreaker.js'
 import physics from './microgames/physics.js'
+import spine from './microgames/spine.js'
 
 window.game = new Phaser.Game({
     type: Phaser.WEBGL,
@@ -47,7 +48,12 @@ window.game = new Phaser.Game({
             gravity: { y: 150 }
         }
     },
+    plugins: {
+        scene: [
+            { key: 'SpinePlugin', plugin: window.SpinePlugin, mapping: 'spine' }
+        ]
+    },
     scene: [scalemanager, timer, menu, newgroundsio,
-        icebreaker, physics
+        icebreaker, physics, spine
     ]
     });

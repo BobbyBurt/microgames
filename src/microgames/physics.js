@@ -14,7 +14,7 @@ export default class physics extends microgame
 {
     constructor()
     {
-        super('game-2');
+        super('physics');
     }
 
     // configure scene
