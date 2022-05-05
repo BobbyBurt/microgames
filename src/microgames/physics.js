@@ -41,19 +41,29 @@ export default class physics extends microgame
             this.resizeField(size);
         });
 
-        var test = this.physics.add.sprite(0, -100, 'ball').setGravityY(300).setBounceY(.7).setScale(4, 4);
+        this.test = this.physics.add.sprite(0, -100, 'ball').setGravityY(1000).setBounceY(0).setScale(4, 4);
 
-        var platform = this.physics.add.staticImage(0, 100, 'logo');
+        this.platform = this.physics.add.image(0, 100, 'logo').setFriction(0);
 
-        this.physics.add.collider(test, platform);
+        this.physics.add.collider(this.test, this.platform);
+
+        this.input.on("pointerdown", () =>
+        {
+            if (this.test.body.touching.down)
+            {
+                this.test.setVelocityY(-700);
+            }
+        })
 
         super.create(HINT);
     }
 
     update()
     {
-        // this.character.setPosition(w / 3, h / 3);
-            // example of using width & height
+        // this.platform.setPosition(this.platform.x - 5, this.platform.y);
+        this.platform.setVelocityX(50);
+        this.platform.body.allowGravity = false;
+        this.platform.setImmovable(true);
     }
 
     resizeField(size)
