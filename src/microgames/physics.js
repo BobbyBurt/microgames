@@ -41,7 +41,7 @@ export default class physics extends microgame
             this.resizeField(size);
         });
 
-        var test = this.physics.add.sprite(0, -100, 'ball').setGravityY(300).setBounceY(.7);
+        var test = this.physics.add.sprite(0, -100, 'ball').setGravityY(300).setBounceY(.7).setScale(4, 4);
 
         var platform = this.physics.add.staticImage(0, 100, 'logo');
 
