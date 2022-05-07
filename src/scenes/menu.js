@@ -27,7 +27,7 @@ export default class menu extends Phaser.Scene
             // MICROGAMES
 
         /** scene key / name for microgames */
-        this.microgames = ['icebreaker', 'physics', 'spine']
+        this.microgames = ['pool', 'svg', 'tilemap', 'icebreaker', 'runner', 'spine']
         this.microgameIndex = 0;
 
             // MENU BUTTONS

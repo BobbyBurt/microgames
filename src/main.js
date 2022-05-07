@@ -8,8 +8,10 @@ import newgroundsio from './scenes/newgroundsio.js'
 
     // microgames
 import icebreaker from './microgames/icebreaker.js'
-import physics from './microgames/physics.js'
+import runner from './microgames/runner.js'
 import spine from './microgames/spine.js'
+import tilemap from './microgames/tilemap.js'
+import svg from './microgames/svg.js'
 
 window.game = new Phaser.Game({
     type: Phaser.WEBGL,
@@ -55,6 +57,6 @@ window.game = new Phaser.Game({
     },
 
     scene: [scalemanager, timer, menu, newgroundsio,
-        icebreaker, physics, spine
+        icebreaker, runner, spine, tilemap, svg
     ]
     });
